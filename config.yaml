@@ -1,0 +1,25 @@
+---
+name: lingling1
+version: 1
+...
+
+cron:
+	-description: update game dateTime from sina
+		url:index.php?m=fetch&f=updateGameTime&t=json
+		schedule: every 6 hour
+		timezone: Beijing
+		
+	-description: update nba tv broadcast forcast
+		url: index.php?m=fetch&f=getNbaTvb&t=json
+		schedule: every 24 hour
+		timezone: Beijing
+
+	-description: update tv broadcast time from sina
+		url: index.php?m=fetch&f=getTvb&t=json
+		schedule: every 12 hour
+		timezone: Beijing 
+		
+	-description: update team ranks in tournament table
+		url:index.php?m=fetch&f=updateRank&t=json
+		schedule: every 24 hour
+		timezone: Beijing
