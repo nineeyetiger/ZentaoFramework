@@ -1144,6 +1144,7 @@ class sql
      */
     public function markLeft($count = 1)
     {
+        if($this->inCondition and !$this->conditionIsTrue) return $this;
         $this->sql .= str_repeat('(', $count);
         return $this;
     }
@@ -1157,6 +1158,7 @@ class sql
      */
     public function markRight($count = 1)
     {
+        if($this->inCondition and !$this->conditionIsTrue) return $this;
         $this->sql .= str_repeat(')', $count);
         return $this;
     }
